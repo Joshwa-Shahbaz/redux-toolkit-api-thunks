@@ -1,11 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../app/Hooks";
 import { ordered, restocked } from "./cakeSlice";
 
 const CakeView = () => {
-  const cakeNum = useSelector((state) => state.cake.numberOfCakes);
+  const cakeNum = useAppSelector((state) => state.cake.numberOfCakes);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleOrderCake = () => {
     dispatch(ordered());
